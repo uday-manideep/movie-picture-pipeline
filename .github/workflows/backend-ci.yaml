@@ -5,15 +5,15 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - "backend/**"
+      - 'backend/**'
 
 defaults:
   run:
     working-directory: backend
 
 env:
-  PYTHON_VERSION: "3.10"
-  CFLAGS: "-Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration"
+  PYTHON_VERSION: '3.10'
+  CFLAGS: '-Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration'
 
 jobs:
   lint:
@@ -72,7 +72,7 @@ jobs:
       - name: Run tests
         run: pipenv run test
 
-    build:
+  build:
     needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
