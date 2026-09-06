@@ -5,15 +5,15 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - "backend/**"
+      - 'backend/**'
 
 defaults:
   run:
     working-directory: backend
 
 env:
-  PYTHON_VERSION: "3.10"
-  CFLAGS: "-Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration"
+  PYTHON_VERSION: '3.10'
+  CFLAGS: '-Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration'
 
 jobs:
   lint:
@@ -80,6 +80,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: |
-          cd backend
-          docker build --tag=mp-backend:latest .
+        run: docker build --tag=mp-backend:latest .
