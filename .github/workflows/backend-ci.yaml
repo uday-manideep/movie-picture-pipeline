@@ -70,6 +70,8 @@ jobs:
         run: pipenv install --dev
 
       - name: Run tests
+        env:
+          FAIL_TEST: "500"
         run: pipenv run test
 
   build:
